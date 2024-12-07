@@ -32,7 +32,6 @@ addBtn.addEventListener('click',()=>{
     tid++;
 })
 
-filterBtn.addEventListener('click',filterTodos);
 
 function displayTodos(todosData){
     container.innerHTML = '';
@@ -75,13 +74,8 @@ function finishTodo(todoId){
 }
 
 function deleteTodo(todoId){
-    
+
     let updatedTodos = todos.filter(obj=>obj.id!==+todoId);
     todos = updatedTodos
     displayTodos(todos);
-}
-
-function filterTodos(){
-    todos.sort((a,b)=>a.isCompleted-b.isCompleted);
-    displayTodos(todos)
 }
